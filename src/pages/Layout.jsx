@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import logo from '../assets/logo-no-bg.png';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { AppContext } from '../Context/AppContext';
 export default function Layout(){
@@ -27,10 +28,12 @@ export default function Layout(){
 
     }
     return (
-        <>
+        <div className="site-background">
             <header>
                 <nav>
-                    <Link to='/' className='nav-link'>Home</Link>
+                <Link to='/' className='nav-link'>
+                     <img src={logo} alt="Logo" className="h-20 w-auto" />
+                        </Link>
                  {/* display username as they login */}
                     {user ? (<div className='flex items-center space-x-4'>
                         <p className='text-slate-400 text-s'>Welcome back {user.name}</p>
@@ -52,6 +55,6 @@ export default function Layout(){
             <main>
                 <Outlet/>
             </main>
-        </>
+        </div>
     )
 }

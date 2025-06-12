@@ -17,7 +17,7 @@ export default function Home(){
     },[])
     return (
         <>
-            <h1 className="title">Latest Post </h1>
+            <h1 className="title">Most Recent Post </h1>
 
             {posts.length > 0 ? ( 
                 posts.map((post) => (
@@ -30,8 +30,8 @@ export default function Home(){
                                 {new Date(post.created_at).toLocaleTimeString()}
                                 </small>
                         </div>
-                        <Link to={`/posts/${post.id}`} className="bg-blue-500 text-white text-sm rounded-lg px-3 py-1">Read more</Link>
-                    </div>
+                        <Link to={`/posts/${post.id}`} className="action-btn update-btn">Read more</Link>                    
+                        </div>
                     <p>{post.body}</p>
                 </div>
             )) 

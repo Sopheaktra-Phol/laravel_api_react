@@ -32,8 +32,6 @@ export default function Register(){
             console.log(data);
         }
 
-        
-
     }
     return (
         <>

@@ -66,14 +66,14 @@ export default function Show() {
                     <p>{post.body}</p>
 
                     {user && user.id === post.user_id && (
-                        <div className="flex items-center justify-end gap-4">
-                            <Link to={`/posts/update/${post.id}`} className="bg-green-600 text-white text-sm rounded px-3 py-1">
-                                Update
-                            </Link>
-                            <form onSubmit={handleDelete}>
-                                <button className="bg-red-600 text-white text-sm rounded px-3 py-1">Delete</button>
-                            </form>
-                        </div>
+                       <div className="flex items-center justify-end gap-4">
+                       <Link to={`/posts/update/${post.id}`} className="action-btn update-btn">
+                           Update
+                       </Link>
+                       <form onSubmit={handleDelete}>
+                           <button className="action-btn danger-btn">Delete</button>
+                       </form>
+                   </div> 
                     )}
                 </div>
             ) : (
